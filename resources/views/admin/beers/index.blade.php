@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-12">
             <h1 class="py-3 fw-bold text-center text-primary">
-                Le Birre
+                Le nostre Birre
             </h1>
         </div>
         <div class="col-12 text-end mb-4">
@@ -70,7 +70,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Sei sicuro di voler eliminare la birra <span id="beerName" class="fw-bold text-danger"></span>?
+                Sei sicuro di voler eliminare la birra {{ $beer->name }} <span id="beerName" class="fw-bold text-danger"></span>?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
