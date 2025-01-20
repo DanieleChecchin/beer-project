@@ -27,9 +27,9 @@
                             <p class="card-text">Quantità: {{ $beer->capacity }} cl</p>
 
                             <div class="mt-2">
-                                <a href="{{ route("admin.beers.show", $project->id) }}" class="btn btn-sm btn-primary me-2">Show</a>
-                                <a href="{{ route("admin.beers.edit", $project->id) }}" class="btn btn-sm btn-success me-2">Edit</a>
-                                <form action="{{ route("admin.beers.delete", $project->id) }}" method="POST" class="d-inline project-destroyer" custom-data-name="{{ $project->name }}">
+                                <a href="{{ route("admin.beers.show", $beer->id) }}" class="btn btn-sm btn-primary me-2">Show</a>
+                                <a href="{{ route("admin.beers.edit", $beer->id) }}" class="btn btn-sm btn-success me-2">Edit</a>
+                                <form action="{{ route("admin.beers.delete", $beer->id) }}" method="POST" class="d-inline project-destroyer" custom-data-name="{{ $beer->name }}">
                                     @csrf
                                     @method("DELETE")
 
