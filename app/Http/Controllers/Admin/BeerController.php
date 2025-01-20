@@ -63,6 +63,8 @@ class BeerController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $beer = Beer::findOrFail($id);
+        $beer->delete();
+        return redirect()->route("admin.beers.index");
     }
 }
