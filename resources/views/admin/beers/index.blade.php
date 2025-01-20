@@ -18,8 +18,8 @@
                 <div class="card mb-4 shadow-lg">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="{{ $beer->image_url ?? asset('images/default-beer.jpg') }}" 
-                                 alt="Immagine di {{ $beer->name }}" 
+                            <img src="{{ $beer->image_url ?? asset('images/default-beer.jpg') }}"
+                                 alt="Immagine di {{ $beer->name }}"
                                  class="img-fluid rounded-start h-100 object-fit-cover">
                         </div>
                         <div class="col-md-8">
@@ -39,11 +39,11 @@
                                     <a href="{{ route('admin.beers.edit', $beer->id) }}" class="btn btn-warning me-2">
                                         <i class="bi bi-pencil"></i> Edit
                                     </a>
-                                    <button type="button" 
-                                            class="btn btn-danger btn-delete" 
-                                            data-id="{{ $beer->id }}" 
-                                            data-name="{{ $beer->name }}" 
-                                            data-bs-toggle="modal" 
+                                    <button type="button"
+                                            class="btn btn-danger btn-delete"
+                                            data-id="{{ $beer->id }}"
+                                            data-name="{{ $beer->name }}"
+                                            data-bs-toggle="modal"
                                             data-bs-target="#deleteModal">
                                         <i class="bi bi-trash"></i> Delete
                                     </button>
@@ -105,6 +105,7 @@
         });
     });
 </script>
+    @vite("resources/js/beers/delete-confirmation.js");
 @endsection
 
 @section("styles")
