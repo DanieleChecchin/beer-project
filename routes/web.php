@@ -22,9 +22,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
-
-
-
-});
+//Routes for beers
+Route::resource('admin/beers', App\Http\Controllers\Admin\BeerController::class, ['as' => 'admin']);
 
