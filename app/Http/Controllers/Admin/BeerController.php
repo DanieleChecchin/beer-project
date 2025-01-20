@@ -23,7 +23,7 @@ class BeerController extends Controller
     public function create()
     {
         $beers = new Beer();
-        return view("admin.beers.create", compact("property"));
+        return view("admin.beers.create", compact("beers"));
     }
 
     /**
