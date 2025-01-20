@@ -31,7 +31,9 @@ class BeerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $beer = Beer::create($data);
+        return redirect()->route("admin.beers.show", [$beer->id]);
     }
 
     /**
@@ -48,7 +50,8 @@ class BeerController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $beer = Beer::findOrFail($id);
+        return view("admin.beers.edit", compact("beer"));
     }
 
     /**
