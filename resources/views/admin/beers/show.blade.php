@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-center">Beer: {{ $beer->name }} </h1>
+            <h1 class="text-center mt-5">Beer: {{ $beer->name }} </h1>
         </div>
 
         <div class="card">
