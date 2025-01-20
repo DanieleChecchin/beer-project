@@ -86,7 +86,7 @@
 @endsection
 
 @section("additional-scripts")
-<script>
+{{-- <script>
     document.addEventListener('DOMContentLoaded', function () {
         const deleteModal = document.getElementById('deleteModal');
         const beerNameElement = document.getElementById('beerName');
@@ -104,7 +104,7 @@
             });
         });
     });
-</script>
+</script> --}}
     @vite("resources/js/beers/delete-confirmation.js");
 @endsection
 
