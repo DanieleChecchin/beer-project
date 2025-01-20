@@ -59,7 +59,12 @@ class BeerController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = $request->all();
+        $beer = Beer::findOrFail($id);
+
+        $beer->update($data);
+
+        return redirect()->route("admin.beers.show", [$beer->id]);
     }
 
     /**
