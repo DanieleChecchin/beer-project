@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Beer;
 
 class BeerController extends Controller
 {
@@ -12,7 +13,8 @@ class BeerController extends Controller
      */
     public function index()
     {
-        //
+        $beers = Beer::all();
+        return view('admin.beers.index', compact('beers'));
     }
 
     /**
@@ -36,7 +38,8 @@ class BeerController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $beer = Beer::findOrFail($id);
+        return view('admin.beers.show', compact('beer'));
     }
 
     /**
