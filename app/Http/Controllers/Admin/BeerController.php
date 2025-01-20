@@ -70,9 +70,8 @@ class BeerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Beer $beer)
     {
-        $beer = Beer::findOrFail($id);
         $beer->delete();
         return redirect()->route("admin.beers.index");
     }
