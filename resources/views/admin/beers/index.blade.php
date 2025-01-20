@@ -29,7 +29,7 @@
                             <div class="mt-2">
                                 <a href="{{ route("admin.beers.show", $beer->id) }}" class="btn btn-sm btn-primary me-2">Show</a>
                                 <a href="{{ route("admin.beers.edit", $beer->id) }}" class="btn btn-sm btn-success me-2">Edit</a>
-                                <form action="{{ route("admin.beers.delete", $beer->id) }}" method="POST" class="d-inline project-destroyer" custom-data-name="{{ $beer->name }}">
+                                <form action="{{ route("admin.beers.destroy", $beer->id) }}" method="POST" class="d-inline project-destroyer" custom-data-name="{{ $beer->name }}">
                                     @csrf
                                     @method("DELETE")
 
