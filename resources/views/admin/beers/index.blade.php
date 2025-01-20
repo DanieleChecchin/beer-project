@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-12">
             <h1 class="py-3 fw-bold text-center text-primary">
-                Le Birre
+                Le nostr Birre
             </h1>
         </div>
         <div class="col-12 text-end mb-4">
