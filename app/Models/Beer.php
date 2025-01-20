@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Beer extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'description',
+        'type',
+        'price',
+        'alcohol_content',
+        'capacity'
+    ];
 }
