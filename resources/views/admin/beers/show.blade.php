@@ -20,7 +20,6 @@
               <li class="list-group-item"> Capienza: {{ $beer->capacity }}</li>
               <li class="list-group-item"> Prezzo: {{ $beer->price }}</li>
             </ul>
-            
           </div>
     </div>
 </div>
