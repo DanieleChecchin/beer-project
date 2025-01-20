@@ -16,9 +16,9 @@
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item"> Tipologia: {{ $beer->type }}</li>
-              <li class="list-group-item"> Gradazione alcolica: {{ $beer->alcohol_content }}</li>
-              <li class="list-group-item"> Capienza: {{ $beer->capacity }}</li>
-              <li class="list-group-item"> Prezzo: {{ $beer->price }}</li>
+              <li class="list-group-item"> Gradazione alcolica: {{ $beer->alcohol_content }} %</li>
+              <li class="list-group-item"> Capienza: {{ $beer->capacity }} cl</li>
+              <li class="list-group-item"> Prezzo: {{ $beer->price }} €</li>
             </ul>
           </div>
     </div>

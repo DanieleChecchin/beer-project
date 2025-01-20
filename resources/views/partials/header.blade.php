@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
+                {{-- {{ config('app.name', 'Laravel') }} --}} Welcome Page
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -13,10 +13,10 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav me-auto">
                     @auth
-                        {{-- <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.projects.index') }}">Index</a>
+                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.beers.index') }}">Beers</a>
                         </li>
-                        <li class="nav-item">
+                       {{-- <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.projects.create') }}">Create a new Project</a>
                         </li> --}}
                     @endauth

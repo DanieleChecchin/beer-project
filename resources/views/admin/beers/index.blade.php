@@ -23,7 +23,7 @@
                             <p class="card-text">Descrizione: {{ $beer->description }}</p>
                             <p class="card-text">Tipo: {{ $beer->type }}</p>
                             <p class="card-text">Prezzo: {{ $beer->price }} € </p>
-                            <p class="card-text">Gradazione: {{ $beer->alcohol_content }}</p>
+                            <p class="card-text">Gradazione: {{ $beer->alcohol_content }} %</p>
                             <p class="card-text">Quantità: {{ $beer->capacity }} cl</p>
 
                             <div class="mt-2">
