@@ -1,11 +1,11 @@
 <header>
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{-- {{ config('app.name', 'Laravel') }} --}} Welcome Page
+                <span style="color: #5e9693;">Beer</span><span style="color: #fff;">Lab</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -13,31 +13,51 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav me-auto">
                     @auth
-                         <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.beers.index') }}">Beers</a>
                         </li>
-                       {{-- <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.projects.create') }}">Create a new Project</a>
-                        </li> --}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!">Offer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!">Portfolio</a>
+                        </li>
                     @endauth
                 </ul>
 
                 <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ms-auto">
-                    <!-- Authentication Links -->
+                <ul class="navbar-nav d-flex flex-row ms-auto">
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                         @endif
 
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif
                     @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -62,3 +82,59 @@
         </div>
     </nav>
 </header>
+
+<style>
+    /* Color of the links BEFORE scroll */
+    .navbar-scroll .nav-link,
+    .navbar-scroll .navbar-toggler-icon,
+    .navbar-scroll .navbar-brand {
+        color: #fff;
+    }
+
+    /* Color of the links AFTER scroll */
+    .navbar-scrolled .nav-link,
+    .navbar-scrolled .navbar-toggler-icon,
+    .navbar-scrolled .navbar-brand {
+        color: #fff;
+    }
+
+    /* Color of the navbar AFTER scroll */
+    .navbar-scroll,
+    .navbar-scrolled {
+        background-color: #cbbcb1;
+    }
+
+        /* Classe iniziale con effetto trasparente */
+    .mask-custom {
+    backdrop-filter: blur(1px);
+    background-color: rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease-in-out;
+    }
+
+    /* Classe per lo stato solido */
+    .navbar-scrolled {
+    backdrop-filter: none;
+    background-color: rgb(182, 182, 0); /* Colore solido */
+    }
+
+
+    .navbar-brand {
+        font-size: 1.75rem;
+        letter-spacing: 3px;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navbar = document.querySelector('.navbar');
+  
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('navbar-scrolled');
+        } else {
+          navbar.classList.remove('navbar-scrolled');
+        }
+      });
+    });
+  </script>
+  
