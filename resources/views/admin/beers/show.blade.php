@@ -23,10 +23,10 @@
               <li class="list-group-item text-white bg-black"> Prezzo: {{ $beer->price }} €</li>
             </ul> --}}
             <div class="bg-black d-flex justify-content-around mt-5">
-                <div class="text-white bg-black text-center card-custom">Tipologia:<br> {{ $beer->type }}</div>
-                <div class="text-white bg-black text-center card-custom">Gradazione:<br> {{ $beer->alcohol_content }} %</div>
-                <div class="text-white bg-black text-center card-custom">Quantità:<br> {{ $beer->capacity }} cl</div>
-                <div class="text-white bg-black text-center card-custom">Prezzo:<br> {{ $beer->price }} €</div>
+                <div class="text-center card-custom">Tipologia:<br> {{ $beer->type }}</div>
+                <div class="text-center card-custom">Gradazione:<br> {{ $beer->alcohol_content }} %</div>
+                <div class="text-center card-custom">Quantità:<br> {{ $beer->capacity }} cl</div>
+                <div class="text-center card-custom">Prezzo:<br> {{ $beer->price }} €</div>
             </div>
         </div>
     </div>
@@ -51,6 +51,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: #3d6865;
+        color: black;
+        box-shadow: 2px 6px 0 1px #5E9693;
+        border-color: #000;
+    }
+    .card-custom:hover{
+        background-color: #5E9693;
+        box-shadow: 2px 6px 0 1px #3d6865;
     }
 </style>
 

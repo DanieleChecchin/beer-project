@@ -33,7 +33,7 @@ class BeerController extends Controller
     {
         $data = $request->all();
         $beer = Beer::create($data);
-        return redirect()->route("admin.beers.show", [$beer->id]);
+        return redirect()->route("admin.beers.index", [$beer->id]);
     }
 
     /**
