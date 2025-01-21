@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="text-center mt-4">
-            <small>&copy; 2025 Birre Artigianali. Tutti i diritti riservati.</small>
+            <small>&copy; 2025 BeerLab. Tutti i diritti riservati.</small>
         </div>
     </div>
 </footer>
