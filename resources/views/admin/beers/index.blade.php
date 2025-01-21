@@ -39,14 +39,13 @@
                                     <a href="{{ route('admin.beers.edit', $beer->id) }}" class="btn btn-warning me-2">
                                         <i class="bi bi-pencil"></i> Edit
                                     </a>
-                                    <button type="button"
-                                            class="btn btn-danger btn-delete"
-                                            data-id="{{ $beer->id }}"
-                                            data-name="{{ $beer->name }}"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#deleteModal">
-                                        <i class="bi bi-trash"></i> Delete
-                                    </button>
+                                    <form class="d-inline beer-destroyer" action="{{ route('admin.beers.destroy', $beer->id) }}" method="POST" custom-data-name="{{ $beer->name }}"">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit">
+                                            <i class="bi bi-trash"></i> Delete
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -60,51 +59,10 @@
         </div>
     </div>
 </div>
-
-<!-- Modal Bootstrap -->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel">Conferma Eliminazione</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Sei sicuro di voler eliminare la birra {{ $beer->name }} <span id="beerName" class="fw-bold text-danger"></span>?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                <form id="confirmDeleteForm" method="POST" action="">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Elimina</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection
 
 @section("additional-scripts")
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const deleteModal = document.getElementById('deleteModal');
-        const beerNameElement = document.getElementById('beerName');
-        const confirmDeleteForm = document.getElementById('confirmDeleteForm');
-
-        // Aggiungi evento sui pulsanti di eliminazione
-        document.querySelectorAll('.btn-delete').forEach(button => {
-            button.addEventListener('click', function () {
-                const beerId = button.getAttribute('data-id');
-                const beerName = button.getAttribute('data-name');
-
-                // Imposta i dati nel modal
-                beerNameElement.textContent = beerName;
-                confirmDeleteForm.action = `/admin/beers/${beerId}`;
-            });
-        });
-    });
-</script>
+@vite("resources/js/beers/delete-confirmation.js");
 @endsection
 
 @section("styles")
