@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\BeerController as BeerController;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +21,15 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//Routes for beers
-Route::resource('admin/beers', App\Http\Controllers\Admin\BeerController::class, ['as' => 'admin']);
+// Routes for beers
+Route::resource('admin/beers', BeerController::class, ['as' => 'admin']);
+
+// SoftDelete trash
+Route::get('/deleted', [BeerController::class, 'deletedIndex'])->name('deleted.index');
+
+// Permanent Delete
+Route::delete("/beers/{beer}/permanent-delete", [BeerController::class, "permanentDelete"])->name("beer.permanent-delete");
+
+// Restore
+Route::patch("/beers/{beer}/restore", [BeerController::class, "restore"])->name("beer.restore");
 
