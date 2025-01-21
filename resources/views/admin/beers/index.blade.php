@@ -42,7 +42,7 @@
                                     <form class="d-inline beer-destroyer" action="{{ route('admin.beers.destroy', $beer->id) }}" method="POST" custom-data-name="{{ $beer->name }}"">
                                         @method('DELETE')
                                         @csrf
-                                        <button type="submit">
+                                        <button type="submit" class="btn btn-danger">
                                             <i class="bi bi-trash"></i> Delete
                                         </button>
                                     </form>
