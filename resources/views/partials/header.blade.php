@@ -12,21 +12,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav me-auto">
-                    @auth
+                    @auth                        
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.beers.index') }}">Birre</a>
+                            <a class="nav-link text-white" href="#!">Offerte</a>
+                        </li>                        
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#!">Contatti</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#!">Offer</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!">Portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('deleted.index') }}">Cestino</a>
+                            <a class="nav-link text-white" href="{{ route('deleted.index') }}">Cestino</a>
                         </li>
                     @endauth
                 </ul>
@@ -62,7 +56,7 @@
                             </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
