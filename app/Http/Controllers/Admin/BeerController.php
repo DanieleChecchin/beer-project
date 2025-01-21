@@ -75,4 +75,29 @@ class BeerController extends Controller
         $beer->delete();
         return redirect()->route("admin.beers.index");
     }
+
+    // Metodo per mettere le birre dal censtino
+    public function deletedIndex()
+    {
+        $beers = Beer::onlyTrashed()->get();
+        return view('admin.beers.deleted-index', compact('beers'));
+    }
+
+    // Metodo per ripristinare le birre dal censtino
+    public function restore(string $id)
+    {
+        $beer = Beer::onlyTrashed()->findOrFail($id);
+        $beer->restore();
+
+        return redirect()->route("admin.beers.index");
+    }
+
+    // Metodo per eliminare definitivamente le birre dal censtino
+    public function permanentDelete(string $id)
+    {
+        $beer = Beer::onlyTrashed()->findOrFail($id);
+        $beer->forceDelete();
+
+        return redirect()->route('admin.beers.index');
+    }
 }
