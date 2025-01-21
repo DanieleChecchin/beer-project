@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\BeerController as BeerController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('admin.beers.index');
 });
 
 Auth::routes();

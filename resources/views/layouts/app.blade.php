@@ -24,7 +24,7 @@
     <div id="app">
         @include('partials.header')
 
-        <main class="py-4">
+        <main class="py-4 bg-black">
             @yield('content')
         </main>
 
