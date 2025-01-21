@@ -26,7 +26,7 @@
                             <a class="nav-link" href="#!">Portfolio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.beers.index') }}">Cestino</a>
+                            <a class="nav-link" href="{{ route('deleted.index') }}">Cestino</a>
                         </li>
                     @endauth
                 </ul>
