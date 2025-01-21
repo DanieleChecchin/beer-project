@@ -14,7 +14,7 @@
                 <ul class="navbar-nav me-auto">
                     @auth
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.beers.index') }}">Beers</a>
+                            <a class="nav-link" href="{{ route('admin.beers.index') }}">Birre</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#!">Offer</a>
@@ -24,6 +24,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#!">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.beers.index') }}">Cestino</a>
                         </li>
                     @endauth
                 </ul>
