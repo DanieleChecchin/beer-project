@@ -9,5 +9,5 @@
 @endsection
 
 @section("form-title")
-    create new beer
+    Aggiungi una nuova birra
 @endsection
