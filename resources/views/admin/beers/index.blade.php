@@ -34,16 +34,16 @@
                                 </ul>
                                 <div class="d-flex justify-content-start mt-3">
                                     <a href="{{ route('admin.beers.show', $beer->id) }}" class="btn btn-info me-2">
-                                        <i class="bi bi-eye"></i> Show
+                                        <i class="bi bi-eye"></i> Mostra
                                     </a>
                                     <a href="{{ route('admin.beers.edit', $beer->id) }}" class="btn btn-warning me-2">
-                                        <i class="bi bi-pencil"></i> Edit
+                                        <i class="bi bi-pencil"></i> Modifica
                                     </a>
                                     <form class="d-inline beer-destroyer" action="{{ route('admin.beers.destroy', $beer->id) }}" method="POST" custom-data-name="{{ $beer->name }}"">
                                         @method('DELETE')
                                         @csrf
                                         <button type="submit" class="btn btn-danger">
-                                            <i class="bi bi-trash"></i> Delete
+                                            <i class="bi bi-trash"></i> Cestina
                                         </button>
                                     </form>
                                 </div>
