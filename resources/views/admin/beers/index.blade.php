@@ -18,9 +18,10 @@
                 <div class="card mb-4 shadow-lg">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="{{ $beer->image_url ?? asset('images/default-beer.jpg') }}"
+                            <img src="{{ asset('/storage/app/public/img/' . $beer->img) }}" alt="{{ $beer->name }}">
+                            {{-- <img src="{{ $beer->image_url ?? asset('images/default-beer.jpg') }}"
                                  alt="Immagine di {{ $beer->name }}"
-                                 class="img-fluid rounded-start h-100 object-fit-cover">
+                                 class="img-fluid rounded-start h-100 object-fit-cover"> --}}
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">

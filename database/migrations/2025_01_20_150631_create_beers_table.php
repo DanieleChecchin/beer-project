@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->decimal('price');
             $table->float('alcohol_content');
             $table->integer('capacity');
+            $table->text('img');
             $table->timestamps();
         });
     }
