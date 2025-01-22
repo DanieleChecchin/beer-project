@@ -21,6 +21,7 @@ class BeerSeeder extends Seeder
                 'price' => 5.50,
                 'alcohol_content' => 5.6,
                 'capacity' => 500,
+                'img' => 'pale.jpg'
             ],
             [
                 'name' => 'Lager',
@@ -29,6 +30,7 @@ class BeerSeeder extends Seeder
                 'price' => 3.75,
                 'alcohol_content' => 4.5,
                 'capacity' => 330,
+                'img' => 'lager.jpg'
             ],
             [
                 'name' => 'IPA',
@@ -37,6 +39,7 @@ class BeerSeeder extends Seeder
                 'price' => 6.20,
                 'alcohol_content' => 6.8,
                 'capacity' => 440,
+                'img' => 'ipa.jpg'
             ],
             [
                 'name' => 'Stout',
@@ -45,6 +48,7 @@ class BeerSeeder extends Seeder
                 'price' => 7.00,
                 'alcohol_content' => 5.9,
                 'capacity' => 500,
+                'img' => 'stout.jpg'
             ],
             [
                 'name' => 'Wheat Beer',
@@ -53,6 +57,7 @@ class BeerSeeder extends Seeder
                 'price' => 4.50,
                 'alcohol_content' => 5.2,
                 'capacity' => 500,
+                'img' => 'wheat.jpg'
             ],
             [
                 'name' => 'Blonde Ale',
@@ -61,6 +66,7 @@ class BeerSeeder extends Seeder
                 'price' => 5.00,
                 'alcohol_content' => 4.8,
                 'capacity' => 330,
+                'img' => 'blonde.jpg'
             ],
         ];
 
