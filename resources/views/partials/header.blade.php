@@ -109,7 +109,7 @@
     /* Classe per lo stato solido */
     .navbar-scrolled {
     backdrop-filter: none;
-    background-color: rgb(182, 182, 0); /* Colore solido */
+    background-color: orange;
     }
 
 
