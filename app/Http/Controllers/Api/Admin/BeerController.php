@@ -8,7 +8,8 @@ use App\Models\Beer;
 
 class BeerController extends Controller
 {
-    public function index(){
+    public function index()
+    {      //http://127.0.0.1:8000/api/admin/beers
         $beers = Beer::all();
         return response()->json([
             'success' => true,
