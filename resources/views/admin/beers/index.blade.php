@@ -37,13 +37,9 @@
                                     <a href="{{ route('admin.beers.edit', $beer->id) }}" class="btn btn-warning me-2">
                                         <i class="bi bi-pencil"></i> Modifica
                                     </a>
-                                    <form class="d-inline beer-destroyer" action="{{ route('admin.beers.destroy', $beer->id) }}" method="POST" custom-data-name="{{ $beer->name }}"">
-                                        @method('DELETE')
-                                        @csrf
-                                        <button type="submit" class="btn btn-danger">
-                                            <i class="bi bi-trash"></i> Cestina
-                                        </button>
-                                    </form>
+                                    <button class="btn btn-danger delete-btn" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="{{ $beer->id }}" data-name="{{ $beer->name }}">
+                                        <i class="bi bi-trash"></i> Cestina
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -57,60 +53,43 @@
         </div>
     </div>
 </div>
+
+<!-- Modal di Conferma Eliminazione -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Conferma Eliminazione</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Sei sicuro di voler eliminare <strong id="beer-name"></strong>?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                <form id="delete-form" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit" class="btn btn-danger">Elimina</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section("additional-scripts")
-@vite("resources/js/beers/delete-confirmation.js");
-@endsection
-
-@section("styles")
-<style>
-    body {
-        background-color: #000;
-        color: #fff;
-    }
-    .card {
-        border: none;
-        border-radius: 15px;
-        background-color: #1a1a1a;
-    }
-    .card-body ul {
-        padding-left: 0;
-    }
-    .card-body li {
-        margin-bottom: 5px;
-    }
-    .btn i {
-        margin-right: 5px;
-    }
-    img.object-fit-cover {
-        object-fit: cover;
-    }
-    .text-gradient-primary {
-        background: linear-gradient(to right, #ff7f50, #ff4500);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    .btn-info {
-        background-color: #007bff;
-        border: none;
-    }
-    .btn-info:hover {
-        background-color: #0056b3;
-    }
-    .btn-warning {
-        background-color: #ffc107;
-        border: none;
-    }
-    .btn-warning:hover {
-        background-color: #e0a800;
-    }
-    .btn-danger {
-        background-color: #dc3545;
-        border: none;
-    }
-    .btn-danger:hover {
-        background-color: #c82333;
-    }
-</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const deleteModal = document.getElementById("deleteModal");
+        deleteModal.addEventListener("show.bs.modal", function (event) {
+            const button = event.relatedTarget;
+            const beerId = button.getAttribute("data-id");
+            const beerName = button.getAttribute("data-name");
+            
+            document.getElementById("beer-name").textContent = beerName;
+            document.getElementById("delete-form").action = `/admin/beers/${beerId}`;
+        });
+    });
+</script>
 @endsection
